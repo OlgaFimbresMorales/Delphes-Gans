@@ -92,7 +92,7 @@ class RootEvents:
     """
     Class for reading jet calorimeter cell values from Delphes ROOT output.
     """
-    def __init__(self, fname, ptmin, ptmax, mass_min=60, mass_max=100):
+    def __init__(self, fname, ptmin, ptmax, mass_min=0, mass_max=400):
         """
         :param fname: .root file to extract from 
         :param ptmin: minimum pT value allowed for jets in GeV

@@ -1,6 +1,13 @@
 //reads .root file and prints comma-separated list of subjets for leading pT jet in each event
+
+#ifdef __CLING__
+R__LOAD_LIBRARY(libDelphes.so)
+#include "classes/DelphesClasses.h"
+#include "external/ExRootAnalysis/ExRootTreeReader.h"
+#endif
+
 void trim_macro(char* fil){
-    gSystem->Load("~/MG5_aMC_v2_2_3/Delphes/libDelphes");
+    gSystem->Load("libDelphes");
     TChain chain("Delphes");
     chain.Add(fil);
     ExRootTreeReader *treeReader = new ExRootTreeReader(&chain);
